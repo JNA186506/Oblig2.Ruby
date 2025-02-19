@@ -27,8 +27,10 @@ public class Mergesort {
         int n1 = mid - min + 1;
         int n2 = max - mid;
 
-        T[] L = (T[]) new Comparable<?>[n1];
-        T[] R = (T[]) new Comparable<?>[n2];
+        @SuppressWarnings("unchecked")
+		T[] L = (T[]) new Comparable<?>[n1];
+        @SuppressWarnings("unchecked")
+		T[] R = (T[]) new Comparable<?>[n2];
 
         for (int i = 0; i < n1; ++i)
             L[i] = a[min + i];
