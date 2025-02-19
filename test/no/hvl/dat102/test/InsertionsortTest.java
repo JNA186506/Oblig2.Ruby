@@ -1,5 +1,11 @@
 package no.hvl.dat102.test;
 
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.*;
+
+import no.hvl.dat102.insertionsort.*;
+
 public class InsertionsortTest {
 	
 	private Integer[] tab1;
@@ -14,20 +20,20 @@ public class InsertionsortTest {
 
     @Test
     void testSortering() {
-        InsertionSort.insertionSort(tab1);
+        Insertionsort.insertionSort(tab1);
         System.out.println();
         assertArrayEquals(tab2, tab1);
     }
 
     @Test
     void testVanlig() {
-        InsertionSortVanlig.insertionSort(tab1);
+        InsertionsortVanlig.insertionSort(tab1);
         assertArrayEquals(tab2, tab1);
     }
 
     @Test
     void testMinsteForst() {
-        InsertionSortVanligMinsteForst.insertionSort(tab1);
+        InsertionsortVanligMinsteForst.insertionSort(tab1);
         assertArrayEquals(tab2, tab1);
     }
 
