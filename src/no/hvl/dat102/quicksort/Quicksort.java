@@ -12,7 +12,7 @@ public class Quicksort {
     	
         if (min < max) {
             int pi = partition(a, min, max);
-            quickSort(a, min, pi -1);
+			quickSort(a, min, pi - 1);
             quickSort(a, pi + 1, max);
         }
 
