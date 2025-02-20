@@ -50,8 +50,9 @@ public class MainInsertionSort {
 			Insertionsort.insertionSort(a[i]); // a[i] blir ein eindimensjonal tabell
 		}
 		slutt = System.currentTimeMillis();// slutt tidsmåling
-		
-		Skrivut.skrivUt(n, 10,(slutt-start) / 2, 32000);
+		double dur = ((double) (slutt-start)) / antal;
+		double con = dur / (n * n);
+		Skrivut.skrivUt(n, antal, dur, dur);
 		
 		start = 0;
 		slutt = 0;
@@ -62,7 +63,7 @@ public class MainInsertionSort {
 		}
 		slutt = System.currentTimeMillis();// slutt tidsmåling
 		
-		Skrivut.skrivUt(n * 2, 10,(slutt-start) / 2, 32000);
+		Skrivut.skrivUt(n * 2, antal,((double) (slutt-start)) / antal, (con * (n * 2) * (n * 2)));
 		
 		start = 0;
 		slutt = 0;
@@ -73,7 +74,7 @@ public class MainInsertionSort {
 		}
 		slutt = System.currentTimeMillis();// slutt tidsmåling
 		
-		Skrivut.skrivUt(n * 4, 10,(slutt-start) / 2, 32000);
+		Skrivut.skrivUt(n * 4, antal,((double) (slutt-start)) / antal, (con * (n * 4) * (n * 4)));
 		
 	}
 
