@@ -7,7 +7,7 @@ import no.hvl.dat102.insertionsort.*;
 import no.hvl.dat102.quicksort.Quicksort;
 import no.hvl.dat102.selectionsort.Selectionsort;
 
-public class Main {
+public class MainInsertionSort {
 	
 	public static void main(String[] args) {
 		
@@ -23,16 +23,25 @@ public class Main {
 		long start = 0;
 		long slutt = 0;
 		Integer[][] a = new Integer[antal][n];
-		Integer[][] b = new Integer[antal][n];
-		Integer[][] c = new Integer[antal][n];
-		Integer[][] d = new Integer[antal][n];
+		Integer[][] b = new Integer[antal][n * 2];
+		Integer[][] c = new Integer[antal][n * 4];
 		// set inn tilfeldige heiltal i alle rekker
 		for (int i = 0; i < antal; i++){
-			for (int j = 0; j < n; j++){
+			int j = 0;
+			while (j < n){
 				a[i][j] = tilfeldig.nextInt();
 				b[i][j] = tilfeldig.nextInt();
 				c[i][j] = tilfeldig.nextInt();
-				d[i][j] = tilfeldig.nextInt();
+				j++;
+			}
+			while (j < n * 2) {
+				b[i][j] = tilfeldig.nextInt();
+				c[i][j] = tilfeldig.nextInt();
+				j++;
+			}
+			while (j < n * 4) {
+				c[i][j] = tilfeldig.nextInt();
+				j++;
 			}
 		}
 		
@@ -42,40 +51,29 @@ public class Main {
 		}
 		slutt = System.currentTimeMillis();// slutt tidsmåling
 		
-		Skrivut.skrivUt(32000, ((double) (slutt-start) / 2), 32000);
+		Skrivut.skrivUt(n, (slutt-start) / 2, 32000);
 		
 		start = 0;
 		slutt = 0;
 		
 		start = System.currentTimeMillis();// start tidsmåling
 		for (int i = 0; i < antal; i++){
-			Mergesort.mergesort(b[i]); // b[i] blir ein eindimensjonal tabell
+			Insertionsort.insertionSort(b[i]); // b[i] blir ein eindimensjonal tabell
 		}
 		slutt = System.currentTimeMillis();// slutt tidsmåling
 		
-		System.out.println(((double) (slutt - start)) / antal);
+		Skrivut.skrivUt(n * 2, (slutt-start) / 2, 32000);
 		
 		start = 0;
 		slutt = 0;
 		
 		start = System.currentTimeMillis();// start tidsmåling
 		for (int i = 0; i < antal; i++){
-			Quicksort.quickSort(c[i]); // c[i] blir ein eindimensjonal tabell
+			Insertionsort.insertionSort(a[i]); // c[i] blir ein eindimensjonal tabell
 		}
 		slutt = System.currentTimeMillis();// slutt tidsmåling
 		
-		System.out.println(((double) (slutt - start)) / antal);
-		
-		start = 0;
-		slutt = 0;
-		
-		start = System.currentTimeMillis();// start tidsmåling
-		for (int i = 0; i < antal; i++){
-			Selectionsort.selectionSort(d[i]); // d[i] blir ein eindimensjonal tabell
-		}
-		slutt = System.currentTimeMillis();// slutt tidsmåling
-		
-		System.out.println(((double) (slutt - start)) / antal);
+		Skrivut.skrivUt(n * 4, (slutt-start) / 2, 32000);
 		
 	}
 
