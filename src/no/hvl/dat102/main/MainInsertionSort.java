@@ -2,10 +2,7 @@ package no.hvl.dat102.main;
 
 import java.util.Random;
 
-import no.hvl.dat102.flettesortering.Mergesort;
 import no.hvl.dat102.insertionsort.*;
-import no.hvl.dat102.quicksort.Quicksort;
-import no.hvl.dat102.selectionsort.Selectionsort;
 
 public class MainInsertionSort {
 	

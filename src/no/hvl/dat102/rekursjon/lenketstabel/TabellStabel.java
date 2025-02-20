@@ -16,6 +16,7 @@ public class TabellStabel<T> implements stackADT<T> {
 		this(DEFAULT_CAPACITY);
 	}
 	
+	@SuppressWarnings("unchecked")
 	public TabellStabel(int initialCapacity) {
 		stack = (T[]) new Object[initialCapacity];
 		topIndex = -1;
