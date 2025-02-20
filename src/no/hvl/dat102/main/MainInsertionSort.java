@@ -11,9 +11,9 @@ public class MainInsertionSort {
 	
 	public static void main(String[] args) {
 		
-		String delelinje = "+---------+----------+-----------------+";
+		String delelinje = "+---------+-----------------+----------+-----------------+";
 		System.out.println(delelinje);
-		System.out.println("|    N    | Målt tid | Teoretisk tid   |");
+		System.out.println("|    N    | Antall Målinger | Målt tid | Teoretisk tid   |");
 		System.out.println(delelinje);
 
 
@@ -51,7 +51,7 @@ public class MainInsertionSort {
 		}
 		slutt = System.currentTimeMillis();// slutt tidsmåling
 		
-		Skrivut.skrivUt(n, (slutt-start) / 2, 32000);
+		Skrivut.skrivUt(n, 10,(slutt-start) / 2, 32000);
 		
 		start = 0;
 		slutt = 0;
@@ -62,18 +62,18 @@ public class MainInsertionSort {
 		}
 		slutt = System.currentTimeMillis();// slutt tidsmåling
 		
-		Skrivut.skrivUt(n * 2, (slutt-start) / 2, 32000);
+		Skrivut.skrivUt(n * 2, 10,(slutt-start) / 2, 32000);
 		
 		start = 0;
 		slutt = 0;
 		
 		start = System.currentTimeMillis();// start tidsmåling
 		for (int i = 0; i < antal; i++){
-			Insertionsort.insertionSort(a[i]); // c[i] blir ein eindimensjonal tabell
+			Insertionsort.insertionSort(c[i]); // c[i] blir ein eindimensjonal tabell
 		}
 		slutt = System.currentTimeMillis();// slutt tidsmåling
 		
-		Skrivut.skrivUt(n * 4, (slutt-start) / 2, 32000);
+		Skrivut.skrivUt(n * 4, 10,(slutt-start) / 2, 32000);
 		
 	}
 
