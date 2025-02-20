@@ -6,8 +6,10 @@ public class Quicksort {
         quickSort(a, 0, a.length - 1);
     }
 
-    static <T extends Comparable<? super T>> void quickSort(T[] a, int min, int max) {
-
+    public static <T extends Comparable<? super T>> void quickSort(T[] a, int min, int max) {
+    	
+    	
+    	
         if (min < max) {
             int pi = partition(a, min, max);
             quickSort(a, min, pi -1);
