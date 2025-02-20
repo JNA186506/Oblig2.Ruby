@@ -1,6 +1,6 @@
 package no.hvl.dat102.insertionsort;
 
-public class Insertionsort {
+public class InsertionsortMinsteForst {
 
 	public static <T extends Comparable<? super T>> void insertionSort(T[] a) {
 		insertionSort(a, 0, a.length - 1);
@@ -8,7 +8,21 @@ public class Insertionsort {
 
 	public static <T extends Comparable<? super T>> void insertionSort(T[] a, int forste, int siste) {
 
-		for (int i = forste; i < siste; i++) {
+		T first = a[0];
+		int idMin = 0;
+
+		for (int k = 0; k < siste; k++) {
+			if (a[k].compareTo(first) < 0) {
+				first = a[k];
+				idMin = k;
+			}
+		}
+
+		T temp = a[0];
+		a[0] = first;
+		a[idMin] = temp;
+
+		for (int i = forste + 1; i < siste; i++) {
 
 			T minste = a[i];
 			T storste = a[i + 1];
@@ -21,14 +35,14 @@ public class Insertionsort {
 
 			int j = i - 1;
 
-			while (j >= forste && a[j].compareTo(storste) > 0) {
+			while (j >= forste + 1 && a[j].compareTo(storste) > 0) {
 				a[j + 2] = a[j];
 				j--;
 			}
 
 			a[j + 2] = storste;
 
-			while (j >= forste && a[j].compareTo(minste) > 0) {
+			while (j >= forste + 1 && a[j].compareTo(minste) > 0) {
 				a[j + 1] = a[j];
 				j--;
 			}

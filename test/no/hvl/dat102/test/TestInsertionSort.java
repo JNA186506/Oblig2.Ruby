@@ -46,4 +46,13 @@ class TestInsertionSort {
 		
 	}
 	
+	@Test
+	void testSortMinDobbel() {
+		
+		InsertionsortMinsteForst.insertionSort(tab1);
+		
+		assertArrayEquals(tab2, tab1);
+		
+	}
+	
 }
