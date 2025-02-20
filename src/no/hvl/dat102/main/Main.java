@@ -11,6 +11,12 @@ public class Main {
 	
 	public static void main(String[] args) {
 		
+		String delelinje = "+---------+----------+-----------------+";
+		System.out.println(delelinje);
+		System.out.println("|    N    | Målt tid | Teoretisk tid   |");
+		System.out.println(delelinje);
+
+
 		Random tilfeldig = new Random((long) Math.floor(Math.random() * 1000));
 		int n = 32000;
 		int antal = 10;
@@ -36,7 +42,7 @@ public class Main {
 		}
 		slutt = System.currentTimeMillis();// slutt tidsmåling
 		
-		System.out.println(((double) (slutt - start)) / antal);
+		Skrivut.skrivUt(32000, ((double) (slutt-start) / 2), 32000);
 		
 		start = 0;
 		slutt = 0;
