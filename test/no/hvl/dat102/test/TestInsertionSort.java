@@ -80,23 +80,23 @@ class TestInsertionSort {
 		
 		long start = 0;
 		
-		start = System.currentTimeMillis();
 		System.out.println("Standard insertion sort:");
+		start = System.currentTimeMillis();
 		InsertionsortVanlig.insertionSort(taba);
 		System.out.println(System.currentTimeMillis() - start + "ms\n");
 		
-		start = System.currentTimeMillis();
 		System.out.println("1a:");
+		start = System.currentTimeMillis();
 		InsertionsortVanligMinsteForst.insertionSort(tabb);
 		System.out.println(System.currentTimeMillis() - start + "ms\n");
 		
-		start = System.currentTimeMillis();
 		System.out.println("1b:");
+		start = System.currentTimeMillis();
 		Insertionsort.insertionSort(tabc);
 		System.out.println(System.currentTimeMillis() - start + "ms\n");
 		
-		start = System.currentTimeMillis();
 		System.out.println("1c:");
+		start = System.currentTimeMillis();
 		InsertionsortMinsteForst.insertionSort(tabd);
 		System.out.println(System.currentTimeMillis() - start + "ms\n");
 		
