@@ -26,7 +26,9 @@ class TestQuickSort {
 	void testSort() {
 		
 		Quicksort.quickSort(tab1);
-		
+		for (Integer b : tab1) {
+			System.out.print(b + " ");
+		}
 		assertArrayEquals(tab2, tab1);
 		
 	}
