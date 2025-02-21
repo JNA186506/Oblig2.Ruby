@@ -13,7 +13,6 @@ public static void main(String[] args) {
 		System.out.println("|    N    | Antall Målinger | Målt tid      | Teoretisk tid   |");
 		System.out.println(delelinje);
 
-
 		Random tilfeldig = new Random((long) Math.floor(Math.random() * 1000));
 		int n = 32000;
 		int antal = 10;

@@ -13,7 +13,6 @@ public static void main(String[] args) {
 		System.out.println("|    N    | Antall Målinger | Målt tid      | Teoretisk tid   |");
 		System.out.println(delelinje);
 
-
 		Random tilfeldig = new Random((long) Math.floor(Math.random() * 1000));
 		int n = 32000;
 		int antal = 10;
@@ -48,7 +47,7 @@ public static void main(String[] args) {
 		}
 		slutt = System.currentTimeMillis();// slutt tidsmåling
 		double dur = ((double) (slutt-start)) / antal;
-		double con = dur / (n * n);
+		double con = dur / (n * Math.log(n));
 		Skrivut.skrivUt(n, antal, dur, dur);
 		
 		start = 0;
@@ -60,7 +59,7 @@ public static void main(String[] args) {
 		}
 		slutt = System.currentTimeMillis();// slutt tidsmåling
 		
-		Skrivut.skrivUt(n * 2, antal,((double) (slutt-start)) / antal, (con * (n * 2) * (n * 2)));
+		Skrivut.skrivUt(n * 2, antal,((double) (slutt-start)) / antal, (con * (n * 2) * Math.log(n * 2)));
 		
 		start = 0;
 		slutt = 0;
@@ -71,7 +70,7 @@ public static void main(String[] args) {
 		}
 		slutt = System.currentTimeMillis();// slutt tidsmåling
 		
-		Skrivut.skrivUt(n * 4, antal,((double) (slutt-start)) / antal, (con * (n * 4) * (n * 4)));
+		Skrivut.skrivUt(n * 4, antal,((double) (slutt-start)) / antal, (con * (n * 4) * Math.log(n * 4)));
 		
 	}
 
