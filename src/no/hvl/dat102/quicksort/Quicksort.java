@@ -31,33 +31,38 @@ public class Quicksort {
 	
 	private static <T extends Comparable<? super T>> void qsIterative(T[] a, int min, int max) {
 		
-		int[] stack = new int[max - min + 1];
+		int[] stack = new int[max - min + 1]; //Bruker stack som en iterativ qs
 		
-		int top = -1;
+		int top = -1; //Init på top-element
 		
+		//Pusher de første elementene på stacken
 		stack[++top] = min;
 		stack[++top] = max;
 		
+		//Poppe elementer mens stacken ikke er tom
 		while (top >= 0) {
 			
+			//pop min og max
 			max = stack[top--];
 			min = stack[top--];
 			
+			//Pivot på riktig plass
 			int p = partition(a, min, max);
 			
+			//hvis det er elementer på venstre, push
 			if (p - 1 > min) {
 				stack[++top] = min;
 				stack[++top] = p - 1;
 				
 			}
 			
+			//hvis det er elementer på høyre, push
 			if (p + 1 < max) {
 				stack[++top] = p + 1;
 				stack[++top] = max;
 				
 			}
 		}
-		
 		
 	}
 
